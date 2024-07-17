@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -135,21 +136,15 @@ class QuranTab extends StatelessWidget {
           "assets/images/quran_bg.png",
           height: 227,
         ),
-        Divider(
-          thickness: 2,
-          color: AppColors.primary,
-        ),
+        Divider(),
         Text(
-          'Sura Name',
+          'sura_names'.tr(),
           textAlign: TextAlign.center,
           style: GoogleFonts.elMessiri(
             fontSize: 25,
           ),
         ),
-        Divider(
-          thickness: 2,
-          color: AppColors.primary,
-        ),
+        Divider(),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) => Row(
@@ -157,18 +152,16 @@ class QuranTab extends StatelessWidget {
                 Expanded(
                     child: Icon(
                   Icons.star_border,
-                  color: AppColors.primary,
                 )),
                 Expanded(
                   flex: 2,
                   child: Divider(
-                    color: AppColors.primary,
+                    thickness: 1,
                   ),
                 ),
                 Expanded(
                     child: Icon(
                   Icons.star_border,
-                  color: AppColors.primary,
                 )),
               ],
             ),
@@ -180,9 +173,7 @@ class QuranTab extends StatelessWidget {
                 },
                 child: Text(
                   suraNames[index],
-                  style: GoogleFonts.elMessiri(
-                    fontSize: 25,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
               );
